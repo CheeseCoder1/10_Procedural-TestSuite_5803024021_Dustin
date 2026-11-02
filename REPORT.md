@@ -125,7 +125,7 @@ TOTAL            51      0     14      0   100%
   and its `super().cancel()` branch.
 - **100% ≠ bug-free.** Coverage only shows the code was executed. Quality comes from the assertions: every test
   checks a concrete expected value or exception, and invalid-transition tests also verify state is unchanged.
-- **Limits:** the tests do not cover floating-point issues in `rate` (mitigated by `round`), non-numeric input
+- **Limits:** The tests do not cover floating-point issues in `rate` (mitigated by `round`), non-numeric input
   types, or concurrency. These are outside the module's stated scope.
 - **Assertion strength check:** I manually applied 7 small mutations (e.g. `>=` → `>`, `0.05` → `0.06`, surcharge
   15k → 10k, removing the Express cancel guard, allowing cancel from SHIPPED). The suite failed on all 7, so the
